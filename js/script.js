@@ -12,7 +12,7 @@ function renderTasks() {
     <li class="list-group-item  d-flex">
       <span>${item.title}</span>
       <div class="icons-box ml-auto">
-        ${item.done ? `<i class="fa fa-check mr-3"></i>`:""}
+         <i class="fa fa-check mr-3"></i>
         <i  class="fa fa-trash"></i>
       </div>
     </li>`
@@ -38,14 +38,3 @@ const formData = new FormData(form)
  
  const total = document.getElementById('tasks-total').innerHTML= tasks.length;
 
- const selectElement = document.querySelector('filter-tasks');
-
- selectElement.addEventListener('change', (event) => {
-   const result = document.querySelector('tasks-box');
-
-   if(tasks.)
-
-
-   result.textContent = `You like ${event.target.value}`;
- });
- 
