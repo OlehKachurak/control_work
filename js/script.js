@@ -38,3 +38,14 @@ const formData = new FormData(form)
  
  const total = document.getElementById('tasks-total').innerHTML= tasks.length;
 
+ let taskDone = [];
+ for (let user of tasks){
+  if (user.done === 'true'){
+   taskDone.push(user.title)
+  }
+
+  let taskProces = [];
+ for (let user of tasks){
+  if (user.done === 'false'){
+   taskProces.push(user.title)
+  }
