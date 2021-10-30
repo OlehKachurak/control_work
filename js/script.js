@@ -33,19 +33,39 @@ const formData = new FormData(form)
     done: false
  
   }) 
+  
   renderTasks();
  } )
- 
- const total = document.getElementById('tasks-total').innerHTML= tasks.length;
-
- let taskDone = [];
- for (let user of tasks){
-  if (user.done === 'true'){
-   taskDone.push(user.title)
+  
+ const selectElement = document.getElementById('filter-tasks');
+selectElement.addEventListener('change',mySecondFunc)
+const res = document.getElementById('tasks-box')
+function mySecondFunc(){
+  let doneTask = [];
+  for (let user of tasks){
+    if(user.done == true){
+      doneTask.push(user.title)
+    }
   }
 
-  let taskProces = [];
- for (let user of tasks){
-  if (user.done === 'false'){
-   taskProces.push(user.title)
+  let remainTask = [];
+  for (let user of tasks){
+    if(user.done == false){
+      remainTask.push(user.title)
+    }
   }
+  for (let key in tasks){
+    if(selectElement.value == 1){
+           return res.textContent = `${doneTask} , ${remainTask}`;
+    }
+    if(selectElement.value == 2){
+      return res.textContent = `${doneTask}`;
+    }
+    if(selectElement.value == 3){
+      return res.textContent = `${remainTask}`;
+    }
+  }
+}
+
+
+
